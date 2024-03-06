@@ -17,14 +17,10 @@
 
 $server=mysqli_connect("localhost","root","","login-page");
 
-if(isset($_POST["sub"]))
-
-{
+if (isset($_POST["sub"])) {
     $name=$_POST["user"];
     $pass=$_POST["pass"];
 
     mysqli_query($server,"insert into register values('$name','$pass')");
     echo"<script>alert('succesfully done')</script>";
 }
-
-?>

@@ -16,23 +16,15 @@
 
 $server=mysqli_connect("localhost","root","","login-page");
 
-if(isset($_POST["sub"]))
-
-{
+if (isset($_POST["sub"])) {
     $name = $_POST["user"];
     $pass = $_POST["pass"];
 
     $query = mysqli_query($server, "(select * from register where name='$name' and password='$pass')");
 
-    if (mysqli_num_rows($query) != 0)
-    {
+    if (mysqli_num_rows($query) != 0) {
         echo "<script>alert('login sucessful')</script>";
-    }
-
-    else
-    {
+    } else {
         echo "<script>alert('login failed')</script>";
     }
 }
-
-?>
